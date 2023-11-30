@@ -1,0 +1,797 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+.rating, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+html {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html{
+    background-color: rgba(122, 191, 191, .5);
+}
+
+/* BODY STYLING */
+
+body{
+    margin: 0 auto;
+    min-width: 414px;
+    max-width: 1200px;
+    width: 85%;
+    background-color: #F2F2F2;
+}
+
+/* FONT STYLING */
+
+h1, h2, h3, nav a, nav p, span, menu li, #social li, figcaption p{
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+p, dd, dt, li, nav, input{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+dt, .rating p, a p, nav span{
+    font-weight: bold;
+}
+
+nav a, span, #social li, footer, figcaption p, label p, a span{
+    font-size: 20px;
+}
+
+h1{
+    font-size: 40px;
+    text-align: center;
+    padding-top: 35px;
+}
+
+h2{
+    font-size: 30px;
+}
+
+h3{
+    font-size: 25px;
+}
+
+label p, a span, figcaption{
+    text-transform: uppercase;
+}
+
+/* COLOR STYLING */
+
+a, button span, #social a{
+    color: #EB5428;
+}
+
+nav label, #sign, footer{
+    background-color: #ffff;
+}
+
+#home, .icon-tabler-search{
+    background-color:#EB5428;
+}
+
+/* ARTICLE GRID */ 
+
+article{
+    display: grid;
+    row-gap: 15px;
+    position: relative;
+    top: 80px;
+    padding-top: 70px;
+    box-shadow: inset 0 7px 9px -7px rgba(0,0,0,0.4);
+}
+
+/* NAV STYLING */
+
+nav{
+    display: grid;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 85%;
+    min-width: 414px;   
+}
+
+a{
+    text-decoration: none;
+}
+
+a span{
+    color: #0D0D0D;
+}
+
+nav a{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+
+nav h2{
+    display: none;
+}
+
+
+nav img, #home .hide{
+    display: none;
+}
+
+
+/* NON-DROPDOWN NAV CONTENT */
+
+nav label{
+    left: 0;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+nav label, #sign{
+    width: 25%;
+    top:0;
+}
+
+#home, #sign, nav label{
+    position: absolute;
+    height: 80px;
+    padding: 10px 0 10px 0;
+}
+
+#sign{
+    right: 0;
+}
+
+#home{
+    width: 50%;
+    left: 25%;
+    z-index: -1;
+}
+
+
+#search{
+    position: absolute;
+    top: 115px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+
+#search h3{
+    display: none;
+}
+
+.icon-tabler-search{
+    stroke: #ffff;
+}
+
+#search input{
+    height: 45px;
+    width: 75%;
+    padding: 5px;
+    text-align: left;
+    border: solid 2px #EB5428;
+    font-size: 14px;
+    
+}
+
+.icon-tabler-search{
+    width: 60px;
+    height: 45px;
+}
+
+
+/* DROPDOWN EFFECT */
+
+nav ul {
+    overflow: hidden;
+    max-height: 0;
+    display: block;
+    width: 100%;
+}
+
+#dropdown {
+    display: none;
+}
+
+#dropdown:checked ~ ul{
+    overflow: visible;
+}
+
+#dropdown:checked ~ #search{
+    left: 150px;
+}
+
+.food-menu{
+    position: relative;
+    z-index: 2;
+    top: 85px;
+    left: -40%;
+}
+
+
+/* RECIPE IMAGE */
+
+#main-image{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* MENU */
+
+menu{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+menu button{
+    border: none;
+    background-color: #F2F2F2;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;;
+    align-items: center;
+
+}
+
+
+/* DETAILS, INTRO,  INGREDIENTS, AND DIRECTIONS GENERAL FORMATTING */
+
+p, #details{
+    padding: 10px;
+}
+
+#details h2, #ingredients h2{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+#directions, #ingredients{
+    margin-top: 15px;
+}
+
+/* DETAILS */
+
+
+dl{
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 10px;
+}
+
+.detail-align{
+    display: flex;
+}
+
+dd{
+    margin-left: 10px;
+}
+
+  /* INGREDIENTS */
+
+#ingredients ul{
+    list-style-type: square;
+    padding-left: 25px;
+}
+
+#ingredients li{
+    padding: 5px;
+}
+
+/* DIRECTIONS */
+
+
+#directions h2{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#directions ol{
+    list-style-type: auto;
+    padding-left: 25px;
+}
+
+#directions li{
+    padding: 10px;
+}
+
+/* SUGGESTED SIDE DISHES */
+
+aside{
+    background-color: #7ABFBF;
+    padding: 15px;
+}
+
+aside h2{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+aside section{
+    display: grid;
+    grid-template-columns: 120px 2fr;
+}
+
+aside img{
+    grid-column-start: 1;
+    grid-row: 1 / 3;
+    width: 100%;
+}
+
+aside h3{
+    grid-column-start: 2;
+    padding-left: 15px;
+}
+
+.side-dish{
+    padding: 15px 5px 45px 15px;
+}
+
+aside p{
+    padding: 0 0 5px 0;
+}
+
+
+
+/* STAR RATING SYSTEM */
+
+.rating{
+    display : flex;
+    flex-wrap: wrap;
+  }
+
+.rating p{
+    margin-top: 5px;
+}
+
+.rating input{
+    position : absolute;
+    left     : -100vw;
+}
+  
+.rating label{
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    margin: 2px;
+    text-indent: -9999px;
+    background-color: #7ABFBF;
+    background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23ffffff" fill="%23EB5428" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>') ;
+    box-shadow: none;
+}
+  
+.rating label[for$="rating5r"]
+{
+    background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-star" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="%23ffffff" fill="%23ffffff" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>') ;
+}
+
+/* FOOTER */
+
+footer{
+    position: relative;
+    top: 100px;
+}
+
+#social{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#social a, figure{
+    display: flex;
+    flex-direction: column-reverse;
+}
+ 
+#social a{
+    padding: 15px 5px 15px 5px;
+    align-items: center;
+}
+
+footer h2{
+    display: none;
+}
+
+figure img{
+    width: 60%;
+    margin: 0 auto;
+}
+
+figcaption{
+    margin: 15px 0 5px 0;
+}
+
+figcaption p{
+    padding: 0;
+    text-align: center;
+}
+
+
+/* -----BREAKPOINT AT 768PX----- */
+
+@media screen and (min-width:768px){
+
+    article{
+        background-color: #F2F2F2;
+        top: 200px;
+        row-gap: 0;
+        padding-top: 10px;
+    }
+
+    body{
+        background-color: #ffff;
+    }
+
+    h1{
+        text-align: left;
+        margin: 0 0 20px 20px;
+    }
+    
+    /* DROPDOWN MENU AND NAV */ 
+
+    .drop-button{
+        display: none;
+    }
+
+    nav{
+        width: 100%;
+        display: block;
+        box-shadow: 0 6px 2px -2px rgba(0, 0, 0, 0.2);
+    }
+
+
+   nav ul {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: 90px 150px;
+        row-gap: 15px;
+        width: 85%;
+        max-width: 1200px;
+        overflow: visible;
+    }
+  
+    #home, #sign, .food-menu{
+        position: static;
+    }
+
+    #home{
+        grid-column: 1;
+        width: 80px;
+        height: 100%;
+        justify-self: left;
+    }
+
+    #sign{
+        grid-column: 7;
+        width: auto;
+    }
+    
+    .food-menu{
+        grid-row: 2;
+        width: 100%;
+    }
+
+    .food-menu a{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    nav img{
+        display: block;
+        width: 60px;
+        height: auto;
+    }
+
+    #sign .hide{
+        display: none;
+    }
+
+    #search{
+        position: absolute;
+        right: 25%;
+        width: 40%;
+        top: 20px;
+        display: flex;
+    }
+
+
+    /* MENU OVER PICTURE */
+
+    menu{
+        position: absolute;
+        width: 100%;
+        height: auto;
+        background-color: rgba(255, 255, 255, .75);
+        justify-content: space-around;
+    }
+
+    menu button{
+        background-color: transparent;
+    }
+
+    /* RECIPE */
+
+    dl{
+        justify-items: center;
+    }
+
+    #recipe-grid-container{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-bottom: 15px;
+    }
+
+    #details{
+        grid-column: 1/ 3;
+    }
+
+    /* SIDE DISHES ASIDE */
+
+    aside{
+        padding-left: 0;
+    }
+
+    /* ASIDE */
+
+    aside{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    aside h2{
+        grid-column: 1 / 3;
+    }
+
+    .rating p{
+        width: auto;
+    }
+
+    /* FOOTER */
+
+    footer{
+        top: 180px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom: 40px;
+    }
+
+    #social-links{
+        grid-column: 2;
+    }
+
+    footer section+section{
+        grid-column: 1;
+
+    }
+
+    figure img{
+        width: 80%;
+        
+    }
+}
+
+
+/* -----BREAKPOINT AT 1200PX----- */
+
+@media screen and (min-width:1200px){
+
+    /* ARTICLE GRID POSITIONING */
+
+    article{
+        grid-template-columns: 100px 1.5fr 2fr;
+        top: 120px;
+        padding-top: 200px;
+    }
+
+    h1{
+        position: absolute;
+        top: 100px;
+        left: 500px;
+        right: 300px
+    }
+
+    #recipe-grid-container, aside{
+        grid-column: 1 / 4;
+    }
+
+
+    /* NAV */
+
+
+    nav ul{
+        grid-template-columns: 200px repeat(7, 1fr) 100px;
+        grid-template-rows: 120px;
+    }
+
+    .food-menu, #home, #sign{
+        grid-row: 1;
+        align-self: center;
+        height: 100%;
+    }
+
+    .food-menu{
+        background-color: #ffff;
+        padding-top: 15px;
+    }
+    
+    #search{
+        width: 350px;
+        top: 170px;
+        left: 450px;
+        right: 400px
+    }
+
+    #sign{
+        grid-column: 10;
+        padding-right: 15px;
+    }
+
+    #home{
+        width: 100px;
+    }
+
+    .icon-tabler-tools-kitchen{
+        position: relative;
+        top: 10px;
+    }
+
+    /* MENU */
+
+    menu{
+        position: static;
+        border: 3px solid #EB5428;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        height: 100%;
+    }
+
+    
+    .hide{
+        display: none;
+    }
+
+    /* DETAILS */
+
+    #details{
+        background-color: #0D0D0D;
+        color: #7ABFBF;
+    }
+    dl{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .detail-align{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    dd, dt{
+        margin: 0;
+        padding: 0;
+    }
+
+    /* ASIDE */
+
+    aside{
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 10px; 
+        padding: 15px 15px 0 15px;  
+
+    }
+
+    aside h2{
+        grid-column: 1 / 5;
+    }
+
+    aside section{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        align-content: start;
+        padding: 10px 10px 0 10px;
+    }
+
+    aside img, aside h3, .side-dish{
+        grid-column: 1 / 3;
+    }
+
+    aside h3{
+        position: static;
+        grid-row: 2;
+        padding: 10px 0 0 10px;
+    }
+
+    .side-dish{
+        padding: 15px 0 5px 5px;
+        position: static;
+    }
+
+    .rating{
+        padding-top: 15px;
+    }
+
+    /* FOOTER */
+
+    footer{
+        align-content: space-between;
+        top: 80px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    footer section + section{
+        grid-row: 1;
+    }
+
+    figure{
+        flex-direction: row-reverse;
+        justify-content: left;
+
+    }
+
+    figure img{
+        width: 40%;
+        margin: 10px;
+    }
+
+}
