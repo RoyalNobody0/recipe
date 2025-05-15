@@ -128,6 +128,7 @@ article{
     padding-top: 70px;
 }
 
+
 article div{
     padding: 10px;
 }
@@ -793,6 +794,11 @@ figcaption p{
         max-width: 1500px;
     }
 
+    main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
     /* ARTICLE GRID POSITIONING */
 
     article{
@@ -853,17 +859,16 @@ figcaption p{
 
     main{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 1fr;
     }
 
-    #hero, #cta{
+    #cta{
         grid-column: span 2;
     }
 
     #hero{
-
+        grid-column: span 2;
         background-image: none;
-        height: 40vh;
     }
 
     #hero h1{
@@ -875,7 +880,6 @@ figcaption p{
     #hero .container{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        height: 100%;
         column-gap: 50px;
     }
 
@@ -895,6 +899,7 @@ figcaption p{
         background-image: url('images/hero.jpg');
         width: 100%;
         height: 100%;
+        min-height: 400px;
         grid-column: 2;
         grid-row: 1 / span 2;
         background-size: cover;
@@ -923,7 +928,7 @@ figcaption p{
       }
 
       #featured-dish a{
-        width: 100%;
+        width: 50%;
       }
 
 
